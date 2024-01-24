@@ -56,4 +56,17 @@ export class HomesComponent {
   deleteTask(index: number) {
     this.tasks.update((tasks) => tasks.filter((task, position) => position !== index))
   }
+
+  toggleChecked(index: number) {
+    this.tasks.update((value) =>
+      value.map((task, position) => {
+        if (position === index)
+          return {
+            ...task,
+            completed: !task.completed,
+          };
+        return task;
+      })
+    );
+  }
 }
