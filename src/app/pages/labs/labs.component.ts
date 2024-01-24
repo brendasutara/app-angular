@@ -12,12 +12,12 @@ import { signal } from '@angular/core';
 export class LabsComponent {
   //esto seria propiedades de esta clase
   welcome = 'Bienvenido a mi primera aplicación con Angular';
-  tasks = [
+  tasks = signal ([
     'Instalar Angular CLI',
     'Crear proyecto',
     'Crear componenetes',
     'Crear servicio',
-  ];
+  ]);
   //Le ponemos signals a cualquier cosa que sea modificable y que necesitemos que cambie el html
   name = signal('Brenda');
   age = 27;
