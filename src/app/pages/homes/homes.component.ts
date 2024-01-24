@@ -15,4 +15,11 @@ export class HomesComponent {
     'Crear componenetes',
     'Crear servicio',
   ]);
+
+  changeHandler (event: Event) {
+    const input = event.target as HTMLInputElement;
+    const newTask = input.value;
+    //update va a crear un nuevo estado
+    this.tasks.update((tasks)=> [...tasks, newTask])
+  }
 }
