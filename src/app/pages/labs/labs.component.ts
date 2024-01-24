@@ -31,6 +31,11 @@ export class LabsComponent {
   });
 
   colorCtrl = new FormControl();
+  //Yo quiero controlar el ancho por una propiedad de HTML
+  widthCtrl = new FormControl(50, {
+    nonNullable: true,
+  });
+
   //Leer este value desde la lógica
   constructor() {
     this.colorCtrl.valueChanges.subscribe( value => {

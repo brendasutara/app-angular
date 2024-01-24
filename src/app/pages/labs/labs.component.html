@@ -89,4 +89,14 @@
   <input type="color" [formControl]="colorCtrl">
   <!-- Aca lo estamos leyendo al value de forma reactiva -->
   <p>Color: {{ colorCtrl.value }}</p>
+  <svg>
+    <g>
+      <rect x="0" y="0" height="100" width="500" [attr.fill]="colorCtrl.value" />
+    </g>
+  </svg>
+
+  <!-- Estilos de Angular -->
+  <hr>
+  <input type="number" [formControl]="widthCtrl">
+  <span class="box" [style.width.px]="widthCtrl.value"></span>
 </div>

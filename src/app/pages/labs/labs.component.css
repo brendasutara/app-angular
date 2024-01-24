@@ -6,3 +6,9 @@ img {
   width: 400px;
   height: auto;
 }
+
+.box {
+  height: 50px;
+  display: block;
+  background-color: aquamarine;
+}
