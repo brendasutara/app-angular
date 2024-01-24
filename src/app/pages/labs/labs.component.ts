@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-labs',
@@ -29,6 +29,14 @@ export class LabsComponent {
     age: 27,
     avatar: 'https://cdn.pixabay.com/photo/2018/02/21/08/40/woman-3169726_1280.jpg'
   });
+
+  colorCtrl = new FormControl();
+  //Leer este value desde la lógica
+  constructor() {
+    this.colorCtrl.valueChanges.subscribe( value => {
+      console.log(value);
+    })
+  }
 
   //metodo de la clase, una funcion dentro de este componente
   clickHandler() {

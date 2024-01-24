@@ -86,5 +86,7 @@
   </div>
 
   <hr>
-  <input type="color" name="" id="">
+  <input type="color" [formControl]="colorCtrl">
+  <!-- Aca lo estamos leyendo al value de forma reactiva -->
+  <p>Color: {{ colorCtrl.value }}</p>
 </div>
