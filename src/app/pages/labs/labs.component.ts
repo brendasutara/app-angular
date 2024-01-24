@@ -24,15 +24,15 @@ export class LabsComponent {
   disabled = true;
   img = 'https://cdn.pixabay.com/photo/2021/10/05/17/24/owl-figurine-6683338_640.jpg';
 
-  person = {
-    name: 'Cata',
+  person = signal({
+    name: 'Brenda',
     age: 27,
     avatar: 'https://cdn.pixabay.com/photo/2018/02/21/08/40/woman-3169726_1280.jpg'
-  }
+  });
 
   //metodo de la clase, una funcion dentro de este componente
   clickHandler() {
-    alert('Hola ' + this.person.name + '! vos tenés ' + this.person.age + ' años')
+    alert('Hola ' + this.person().name + '! vos tenés ' + this.person().age + ' años')
   }
 
   changeHandler(event: Event) {
@@ -44,5 +44,16 @@ export class LabsComponent {
   keydownHanler (event: KeyboardEvent) {
     const input = event.target as HTMLInputElement;
     console.log(input.value);
+  }
+
+  changeAge(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.person.update(prevState => {
+      return {
+        ...prevState,
+        age: parseInt(newValue, 10)
+      }
+    });
   }
 }

@@ -13,7 +13,7 @@
   <p>Hola soy {{ name() }} y tengo {{ age }}</p>
 
   <hr />
-  <img [src]="person.avatar" alt="">
+  <img [src]="person().avatar" alt="">
   <input type="text" [value]="name()">
   <button [disabled]="disabled">Click me</button>
   <p>Person: {{ person.name }}</p>
@@ -29,15 +29,15 @@
 
   <!-- Cuando se produce un cambio, no cambia en tiempo real -->
   <p>(change)</p>
-  <input type="number" [value]="person.age" (change)="changeHandler($event)">
+  <input type="number" [value]="person().age" (change)="changeHandler($event)">
 
   <!-- Cuando alguien oprime cualquier letra -->
   <p>(keydown)</p>
-  <input type="text" [value]="person.name" (keydown)="keydownHanler($event)">
+  <input type="text" [value]="person().name" (keydown)="keydownHanler($event)">
 
   <!-- Cuando alguien oprime un comando en especifico -->
   <p>(keydown con tecla especifica)</p>
-  <input type="text" [value]="person.name" (keydown.shift.t)="clickHandler()">
+  <input type="text" [value]="person().name" (keydown.shift.t)="clickHandler()">
 
   <hr>
   <ul>
@@ -51,4 +51,22 @@
   <input type="text" [value]="name()" (change)="changeHandler($event)">
   <p>name: {{ name () }}</p>
 
+  <!-- ngif -->
+  <hr>
+  <!-- aparece cuando cumple la condición, en sensible a mayuscúlas -->
+  <div *ngIf="name() === 'Marta'">
+    Si, eres Marta!
+  </div>
+
+  <!-- metodo para cambiar la edad -->
+  <p>(aqui puedes cambiar la edad)</p>
+  <input type="number" [value]="person().age" (change)="changeAge($event)">
+
+  <!-- cuando esa condición no se cumple, vaya a renderizar ese bloque. -->
+  <div *ngIf="person().name === 'Brenda' && person().age > 18; else elseBlock">
+    Si, eres Brenda y super mayor
+  </div>
+  <ng-template #elseBlock>
+    Soy menor de edad y me llamo Cata
+  </ng-template>
 </div>
