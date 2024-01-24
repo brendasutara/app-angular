@@ -19,7 +19,11 @@ export class HomesComponent {
   changeHandler (event: Event) {
     const input = event.target as HTMLInputElement;
     const newTask = input.value;
-    //update va a crear un nuevo estado
+    //update va a crear un nuevo estado, lo agrega
     this.tasks.update((tasks)=> [...tasks, newTask])
+  }
+
+  deleteTask(index: number) {
+    this.tasks.update((tasks) => tasks.filter((task, position) => position !== index))
   }
 }
