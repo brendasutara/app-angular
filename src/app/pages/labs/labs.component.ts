@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { signal } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './labs.component.html',
   styleUrl: './labs.component.css'
 })
@@ -25,7 +25,7 @@ export class LabsComponent {
   img = 'https://cdn.pixabay.com/photo/2021/10/05/17/24/owl-figurine-6683338_640.jpg';
 
   person = signal({
-    name: 'Brenda',
+    name: 'Cata',
     age: 27,
     avatar: 'https://cdn.pixabay.com/photo/2018/02/21/08/40/woman-3169726_1280.jpg'
   });
@@ -53,6 +53,17 @@ export class LabsComponent {
       return {
         ...prevState,
         age: parseInt(newValue, 10)
+      }
+    });
+  }
+
+  changeName(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.person.update(prevState => {
+      return {
+        ...prevState,
+        name: newValue
       }
     });
   }

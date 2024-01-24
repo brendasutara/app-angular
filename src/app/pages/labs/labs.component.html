@@ -69,4 +69,22 @@
   <ng-template #elseBlock>
     Soy menor de edad y me llamo Cata
   </ng-template>
+
+  <hr>
+  <!-- metodo para cambiar el nombre -->
+  <p>(aqui puedes cambiar el nombre)</p>
+  <input type="text" [value]="person().name" (change)="changeName($event)">
+  <!-- En casos cuando tenemos muchos ngIf, es mejor usar un ngSwitch y se lee mejor -->
+  <div [ngSwitch]="person().name">
+    <p *ngSwitchCase="'Brenda'">Yo soy Brenda</p>
+    <p *ngSwitchCase="'Marta'">Yo soy Marta</p>
+    <p *ngSwitchCase="'Cata'">Yo soy Cata</p>
+    <p *ngSwitchCase="'Eli'">Yo soy Eli</p>
+    <p *ngSwitchCase="'German'">Yo soy German</p>
+    <!-- Cuando no cumple con ningun caso, usamos una por default -->
+    <p *ngSwitchDefault>Yo soy nadie muajajaj</p>
+  </div>
+
+  <hr>
+  <input type="color" name="" id="">
 </div>
