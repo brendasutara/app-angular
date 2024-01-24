@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-labs',
@@ -17,7 +18,8 @@ export class LabsComponent {
     'Crear componenetes',
     'Crear servicio',
   ];
-  name = 'Brenda';
+  //Le ponemos signals a cualquier cosa que sea modificable y que necesitemos que cambie el html
+  name = signal('Brenda');
   age = 27;
   disabled = true;
   img = 'https://cdn.pixabay.com/photo/2021/10/05/17/24/owl-figurine-6683338_640.jpg';
@@ -34,7 +36,9 @@ export class LabsComponent {
   }
 
   changeHandler(event: Event) {
-    console.log();
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.name.set(newValue);
   }
 
   keydownHanler (event: KeyboardEvent) {

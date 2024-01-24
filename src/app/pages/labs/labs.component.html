@@ -10,13 +10,13 @@
   <hr />
 
   <p>La suma de 3 + 3 es {{ 3 + 3 }}</p>
-  <p>Hola soy {{ name }} y tengo {{ age }}</p>
+  <p>Hola soy {{ name() }} y tengo {{ age }}</p>
 
   <hr />
   <img [src]="person.avatar" alt="">
-  <input type="text" [value]="name">
+  <input type="text" [value]="name()">
   <button [disabled]="disabled">Click me</button>
-  <p>Person: {{ person.name}}</p>
+  <p>Person: {{ person.name }}</p>
 
   <hr />
   <!-- Leer eventos en Angular -->
@@ -39,6 +39,9 @@
   <p>(keydown con tecla especifica)</p>
   <input type="text" [value]="person.name" (keydown.shift.t)="clickHandler()">
 
-
+  <hr>
+  <h1>Signals</h1>
+  <input type="text" [value]="name()" (change)="changeHandler($event)">
+  <p>name: {{ name () }}</p>
 
 </div>
