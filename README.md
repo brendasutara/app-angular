@@ -1,27 +1,97 @@
-# Todoapp
+# Todoapp - Checklist App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Esta aplicación de checklist fue desarrollada como parte de mi aprendizaje en Angular, siguiendo el curso "Nuevo Curso de Angular 17: Creación de Aplicaciones Web" dictado por Nicolás Molina, Google Developer Expert en Google.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Conceptos Básicos de Angular:**
+  - Property Binding.
+  - Event Binding (click, doble click, keydown).
+  - Modelo de reactividad con Signals.
 
-## Code scaffolding
+- **Estructuras de Control en Angular:**
+  - ngFor para iteración.
+  - ngIf para condicionales.
+  - ngSwitch para manejo de múltiples condiciones.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Manejo de Formularios:**
+  - Aprendí a trabajar con formularios en Angular.
 
-## Build
+- **Estados Compuestos:**
+  - Utilización de estados compuestos.
+  - Uso de computed para lógica derivada.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Efectos y LocalStorage:**
+  - Implementación de effects para manejar cambios de estado.
+  - Almacenamiento persistente en LocalStorage.
 
-## Running unit tests
+- **Despliegue con Firebase Hosting:**
+  - Despliegue exitoso de la aplicación utilizando Firebase Hosting.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Enlace de la Aplicación Desplegada
 
-## Running end-to-end tests
+[¡Pruébala aquí!](https://mydayapp-15b82.web.app/)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Instrucciones Locales
 
-## Further help
+1. Clona el repositorio:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    ```bash
+    git clone https://github.com/TuUsuario/checklist-app.git
+    ```
+
+2. Navega al directorio de la aplicación:
+
+    ```bash
+    cd checklist-app
+    ```
+
+3. Instala las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+4. Inicia la aplicación:
+
+    ```bash
+    ng serve
+    ```
+
+   La aplicación estará disponible en `http://localhost:4200/`.
+
+## Contribuciones
+
+¡Contribuciones son bienvenidas! Si tienes sugerencias de mejoras o encuentras problemas, no dudes en abrir un *issue* o enviar un *pull request.
+
+## Agradecimientos
+
+Agradezco a Nicolás Molina por impartir el curso que sirvió como base para desarrollar esta aplicación.
+
+## Uso de Angular CLI
+
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 17.0.5.
+
+### Servidor de Desarrollo
+
+Ejecuta `ng serve` para iniciar un servidor de desarrollo. Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si realizas cambios en los archivos fuente.
+
+### Generación de Código
+
+Ejecuta `ng generate component component-name` para generar un nuevo componente. También puedes usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+### Construcción
+
+Ejecuta `ng build` para construir el proyecto. Los artefactos de construcción se almacenarán en el directorio `dist/`.
+
+### Ejecución de Pruebas Unitarias
+
+Ejecuta `ng test` para ejecutar las pruebas unitarias a través de [Karma](https://karma-runner.github.io).
+
+### Ejecución de Pruebas End-to-End
+
+Ejecuta `ng e2e` para ejecutar las pruebas end-to-end a través de una plataforma de tu elección. Para usar este comando, primero debes agregar un paquete que implemente capacidades de pruebas end-to-end.
+
+### Ayuda Adicional
+
+Para obtener más ayuda sobre Angular CLI, usa `ng help` o visita la [Página de Información y Referencia de Comandos de Angular CLI](https://angular.io/cli).
