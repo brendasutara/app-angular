@@ -4,7 +4,7 @@ Esta aplicación de checklist fue desarrollada como parte de mi aprendizaje en A
 
 ## Captura de pantalla
 
-![Captura del Proyecto]([https://imgur.com/xHmMocM](https://i.imgur.com/u6O3HLL.png))
+![Captura del Proyecto](https://imgur.com/xHmMocM)
 ![Captura del Proyecto](https://imgur.com/u6O3HLL)
 ![Captura del Proyecto](https://imgur.com/90vx3Tt)
 
