@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, Injector, computed, effect, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -13,10 +13,10 @@ import { Task } from '../../models/task.model';
 })
 export class HomesComponent {
   tasks = signal <Task[]> ([
-    {
+    /* {
       id: Date.now(),
       title: 'Instalar Angular CLI',
-      completed: false
+      completed: true
     },
     {
       id: Date.now(),
@@ -32,10 +32,11 @@ export class HomesComponent {
       id: Date.now(),
       title: 'Crear servicio',
       completed: false
-    },
+    }, */
   ]);
 
   filter = signal< 'all' | 'pending' | 'completed' >('all');
+  //el computed siempre retorna, calcula algo y después retorna
   taskByFilter = computed(() => {
     const filter = this.filter();
     const tasks = this.tasks();
@@ -54,6 +55,25 @@ export class HomesComponent {
       Validators.required,
     ]
   })
+
+  injector = inject(Injector)
+
+  ngOnInit() {
+    const storage = localStorage.getItem('tasks');
+    if (storage) {
+      const tasks = JSON.parse(storage);
+      this.tasks.set(tasks);
+    }
+    this.trackTasks();
+  }
+
+  trackTasks () {
+    //me sirve como una especie de espia, cada vez que algo cambie
+    effect(() => {
+      const tasks = this.tasks();
+      localStorage.setItem('tasks', JSON.stringify(tasks))
+    }, {injector: this.injector} );
+  }
 
   changeHandler () {
     if (this.newTaskCtrl.valid) {

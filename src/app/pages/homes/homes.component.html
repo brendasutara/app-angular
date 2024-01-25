@@ -61,7 +61,7 @@
         </ul>
       </section>
       <!-- This footer should be hidden by default and shown when there are todos -->
-      <footer class="footer">
+      <footer class="footer" *ngIf="taskByFilter().length > 0">
         <!-- This should be `0 items left` by default -->
         <span class="todo-count">
           <strong>{{ taskByFilter().length }}</strong>
@@ -74,21 +74,23 @@
             <a
               routerLink="/"
               (click)="changeFilter('all')"
-              class="selected">
+              [class.selected]="filter() === 'all'">
                 All
             </a>
           </li>
           <li>
             <a
               routerLink="/pending"
-              (click)="changeFilter('pending')">
+              (click)="changeFilter('pending')"
+              [class.selected]="filter() === 'pending'">
                 Pending
             </a>
           </li>
           <li>
             <a
             routerLink="/completed"
-            (click)="changeFilter('completed')">
+            (click)="changeFilter('completed')"
+            [class.selected]="filter() === 'completed'">
               Completed
             </a>
           </li>
