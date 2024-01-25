@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-labs',
@@ -34,6 +34,13 @@ export class LabsComponent {
   //Yo quiero controlar el ancho por una propiedad de HTML
   widthCtrl = new FormControl(50, {
     nonNullable: true,
+  });
+  nameCtrl = new FormControl('Brenda', {
+    nonNullable: true,
+    validators: [
+      Validators.required,
+      Validators.minLength(3)
+    ]
   });
 
   //Leer este value desde la lógica

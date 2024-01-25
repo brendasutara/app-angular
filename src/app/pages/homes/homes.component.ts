@@ -79,4 +79,38 @@ export class HomesComponent {
     );
   }
 
+  //Para editar tareas, lo activamos con doble click a este método
+  updateTaskEditingMode(index: number) {
+    this.tasks.update((value) =>
+      value.map((task, position) => {
+        if (position === index)
+          return {
+            ...task,
+            editing: true,
+          };
+        return {
+          //esto lo hago para editar una sola a la vez y que las demás se pongan en false
+          ...task,
+          editing: false
+        };
+      })
+    );
+  }
+
+  //Para actualizar la tarea editada
+  updateTaskText(index: number, event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.tasks.update((value) =>
+      value.map((task, position) => {
+        if (position === index)
+          return {
+            ...task,
+            title: input.value,
+            editing: false
+          };
+        return task;
+      })
+    );
+  }
+
 }
