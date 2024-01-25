@@ -2,6 +2,12 @@
 
 Esta aplicación de checklist fue desarrollada como parte de mi aprendizaje en Angular, siguiendo el curso "Nuevo Curso de Angular 17: Creación de Aplicaciones Web" dictado por Nicolás Molina, Google Developer Expert en Google.
 
+## Captura de pantalla
+
+![Captura del Proyecto](https://imgur.com/xHmMocM)
+![Captura del Proyecto](https://imgur.com/u6O3HLL)
+![Captura del Proyecto](https://imgur.com/90vx3Tt)
+
 ## Características
 
 - **Conceptos Básicos de Angular:**
@@ -31,6 +37,14 @@ Esta aplicación de checklist fue desarrollada como parte de mi aprendizaje en A
 ## Enlace de la Aplicación Desplegada
 
 [¡Pruébala aquí!](https://mydayapp-15b82.web.app/)
+
+## Funcionalidades
+
+- **Agregar Tareas:** Añade nuevas tareas a tu lista.
+- **Marcar como Completadas:** Marca las tareas como completadas cuando finalices.
+- **Eliminar Tareas:** Elimina las tareas que ya no necesitas.
+- **Filtrar Tareas:** Filtra si estan completadas o pendientes.
+- **Editar Tareas:** Puedes editar la tarea que quisieras, simplemente haciendo doble click en la misma.
 
 ## Instrucciones Locales
 
