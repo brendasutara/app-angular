@@ -72,7 +72,6 @@
         <ul class="filters">
           <li>
             <a
-              routerLink="/"
               (click)="changeFilter('all')"
               [class.selected]="filter() === 'all'">
                 All
@@ -80,7 +79,6 @@
           </li>
           <li>
             <a
-              routerLink="/pending"
               (click)="changeFilter('pending')"
               [class.selected]="filter() === 'pending'">
                 Pending
@@ -88,7 +86,6 @@
           </li>
           <li>
             <a
-            routerLink="/completed"
             (click)="changeFilter('completed')"
             [class.selected]="filter() === 'completed'">
               Completed

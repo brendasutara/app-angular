@@ -58,6 +58,11 @@
     Si, eres Marta!
   </div>
 
+  <!-- Nueva sintaxis if -->
+  @if (name() === 'Marta') {
+    <div> Si, eres Marta!</div>
+  }
+
   <!-- metodo para cambiar la edad -->
   <p>(aqui puedes cambiar la edad)</p>
   <input type="number" [value]="person().age" (change)="changeAge($event)">
@@ -69,6 +74,14 @@
   <ng-template #elseBlock>
     Soy menor de edad y me llamo Cata
   </ng-template>
+
+  <!-- Nueva sintaxis if -->
+  <h2>If else new</h2>
+  @if (person().name === 'Brenda' && person().age > 18) {
+    <div> Si, eres Brenda y super mayor</div>
+  } @else {
+    <div>Soy menor de edad y me llamo Cata</div>
+  }
 
   <hr>
   <!-- metodo para cambiar el nombre -->
@@ -108,4 +121,54 @@
   <p>
     <input type="text">
   </p>
+
+  <hr>
+  <!-- Nueva sintaxis -->
+  <ul>
+    <p>Total: {{ tasks().length }}</p>
+    <li *ngFor="let task of tasks(); index as i">
+     {{ i }} {{ task }}
+    </li>
+  </ul>
+  <h2>for new sintax</h2>
+  <p>Es lo mismo pero tiene un rendimiento mucho mayor</p>
+  <ul>
+    <p>Total: {{ tasks().length }}</p>
+    @for(task of tasks(); track task; let i = $index) {
+      <li>{{ i }} {{ task }}</li>
+    } @empty {
+      <li><strong>La lista está vacía</strong></li>
+    }
+  </ul>
+
+  <hr>
+  <div [ngSwitch]="person().name">
+    <p *ngSwitchCase="'Brenda'">Yo soy Brenda</p>
+    <p *ngSwitchCase="'Marta'">Yo soy Marta</p>
+    <p *ngSwitchCase="'Cata'">Yo soy Cata</p>
+    <p *ngSwitchCase="'Eli'">Yo soy Eli</p>
+    <p *ngSwitchCase="'German'">Yo soy German</p>
+    <!-- Cuando no cumple con ningun caso, usamos una por default -->
+    <p *ngSwitchDefault>Yo soy nadie muajajaj</p>
+  </div>
+  <!-- Nueva sintaxis -->
+  <h2>switch new sintax</h2>
+  <p>Es lo mismo pero tiene un rendimiento mucho mayor</p>
+  @switch (person().name) {
+    @case ('Brenda') {
+      <p>Yo soy Brenda</p>
+    }
+    @case ('Marta') {
+      <p>Yo soy Marta</p>
+    }
+    @case ('Cata') {
+      <p>Yo soy Cata</p>
+    }
+    @case ('Eli') {
+      <p>Yo soy Eli</p>
+    }
+    @default {
+      <p>Yo soy nadie muajajaj</p>
+    }
+  }
 </div>
