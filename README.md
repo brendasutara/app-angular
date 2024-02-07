@@ -34,7 +34,7 @@ Esta aplicación de checklist fue desarrollada como parte de mi aprendizaje en A
 
 ## Enlace de la Aplicación Desplegada
 
-[¡Pruébala aquí!](https://mydayapp-15b82.web.app/)
+[¡Pruébala aquí!](https://todoapp-amber-ten.vercel.app/)
 
 ## Funcionalidades
 
